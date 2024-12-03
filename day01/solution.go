@@ -3,8 +3,6 @@ package day01
 import (
 	"aoc/utils"
 	"fmt"
-	"math"
-	"sort"
 	"strings"
 )
 
@@ -32,14 +30,21 @@ func Solve(inputFile string) {
 			listB = append(listB, listBInt)
 		}
 	}
-	sort.Ints(listA)
-	sort.Ints(listB)
-	var sum int
-	for i := 0; i < len(listA); i++ {
-		intA := listA[i]
-		intB := listB[i]
-		distance := math.Abs(float64(intA - intB))
-		sum += int(distance)
+	var bMap = map[int]int{}
+	for i := 0; i < len(listB); i++ {
+		num := listB[i]
+		if val, exists := bMap[num]; exists {
+			bMap[num] = val + 1
+		} else {
+			bMap[num] = 1
+		}
 	}
-	fmt.Println("sum of distances", sum)
+	similarityScore := 0
+	for i := 0; i < len(listA); i++ {
+		num := listA[i]
+		if appearances, exists := bMap[num]; exists {
+			similarityScore += appearances * num
+		}
+	}
+	fmt.Println("similarity score", similarityScore)
 }
