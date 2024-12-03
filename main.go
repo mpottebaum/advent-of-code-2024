@@ -3,6 +3,7 @@ package main
 import (
 	"aoc/day01"
 	"aoc/day02"
+	"aoc/day03"
 	"os"
 )
 
@@ -17,6 +18,8 @@ func main() {
 			day01.Solve(inputFile)
 		case "2":
 			day02.Solve(inputFile)
+		case "3":
+			day03.Solve(inputFile)
 		}
 	}
 }
