@@ -2,6 +2,7 @@ package main
 
 import (
 	"aoc/day01"
+	"aoc/day02"
 	"os"
 )
 
@@ -14,6 +15,8 @@ func main() {
 		switch day := meArgs[1]; day {
 		case "1":
 			day01.Solve(inputFile)
+		case "2":
+			day02.Solve(inputFile)
 		}
 	}
 }
