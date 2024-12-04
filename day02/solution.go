@@ -36,11 +36,7 @@ func isSafe(nums []int) bool {
 }
 
 func Solve(inputFile string) {
-	fileName := "input"
-	if len(inputFile) > 0 {
-		fileName = inputFile
-	}
-	input := utils.ReadFileToString("day02/" + fileName + ".txt")
+	input := utils.ReadFileToString("day02/" + inputFile + ".txt")
 	rows := strings.Split(input, "\n")
 	numSafe := 0
 	for i := 0; i < len(rows); i++ {
