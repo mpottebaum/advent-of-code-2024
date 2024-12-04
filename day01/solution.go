@@ -7,11 +7,7 @@ import (
 )
 
 func Solve(inputFile string) {
-	fileName := "input"
-	if len(inputFile) > 0 {
-		fileName = inputFile
-	}
-	input := utils.ReadFileToString("day01/" + fileName + ".txt")
+	input := utils.ReadFileToString("day01/" + inputFile + ".txt")
 	rows := strings.Split(input, "\n")
 	var listA, listB []int
 	for i := 0; i < len(rows); i++ {

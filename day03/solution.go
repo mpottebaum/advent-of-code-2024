@@ -7,11 +7,7 @@ import (
 )
 
 func Solve(inputFile string) {
-	fileName := "input"
-	if len(inputFile) > 0 {
-		fileName = inputFile
-	}
-	input := utils.ReadFileToString("day03/" + fileName + ".txt")
+	input := utils.ReadFileToString("day03/" + inputFile + ".txt")
 	doozers := strings.Split(input, "do()")
 	muller := 0
 	for i := 0; i < len(doozers); i++ {
